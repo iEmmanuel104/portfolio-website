@@ -482,8 +482,8 @@ h6 {
 }
 
 .slide-menu .social-media li a > img {
-    z-index: 25;
-
+    height: 18px;
+    width: 22px;
 }
 .slide-menu .social-media li a:hover {
     background: #dca52e;
@@ -1520,8 +1520,8 @@ h6 {
 }
 
 .footer .footer-social-icons li a > img { 
-       z-index: 25;
-
+    height: 18px;
+    width: 22px;
 }
 
 .footer .footer-social-icons li a:hover {
