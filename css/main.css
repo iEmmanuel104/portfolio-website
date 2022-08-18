@@ -1198,6 +1198,7 @@ h6 {
     position: relative;
     border-bottom: 3px solid;
     border-image: 1 linear-gradient(to left, #fa9b1b 7%, #dca52e 93%);
+    height: 556px;
 }
 
 .blog .post:hover .post-img img {
