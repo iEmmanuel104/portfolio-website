@@ -481,25 +481,6 @@ h6 {
     font-size: 14px;
 }
 
-.slide-menu .social-media li>div {
-    background: transparent;
-    color: #9a9b9c;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    margin: 0 3px;
-    border: 1px solid #9a9b9c;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 14px;
-}
-
-.slide-menu .social-media li div>img {
-    height: 18px;
-    width: 22px;
-}
-
 .slide-menu .social-media li a > img {
     height: 18px;
     width: 22px;
@@ -1552,7 +1533,7 @@ h6 {
     font-size: 14px;
 }
 
-.footer .footer-social-icons li div > img { 
+.footer .footer-social-icons li a > img { 
     height: 18px;
     width: 22px;
 }
