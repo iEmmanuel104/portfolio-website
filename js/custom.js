@@ -131,7 +131,7 @@ $(function () {
 
         var config = {
             method: 'post',
-            url: 'http://127.0.0.1:3000/api/v1/mail',
+            url: 'https://git.heroku.com/mailservice-portfolio.git/mail',
             headers: { 
                 'Content-Type': 'application/json'
             },
