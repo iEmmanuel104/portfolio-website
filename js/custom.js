@@ -122,45 +122,38 @@ $(function () {
 	
 	/*========== Ajax Contact Form  ==========*/
 	$('.contact-form').on("submit", function () {
-		
-		var myForm = $(this),
-			data = {};
-		
-		myForm.find('[name]').each(function() {
-			
-			var that = $(this),
-				name = that.attr('name'),
-				value = that.val();
-			
-			data[name] = value;
-			
-		});
-		
-		$.ajax({
-			
-			url: myForm.attr('action'),
-			type: myForm.attr('method'),
-			data: data,
-			success: function (response) {
-				
-				if (response == "success") {
-								
-					$(".contact-form").find(".form-message").addClass("success");
-					$(".form-message span").text("Message Sent!");
-					
-				} else {
-					
-					$(".contact-form").find(".form-message").addClass("error");
-					$(".form-message span").text("Error Sending!");
-					
-				}
-			}
-			
-		});
-		
-		return false;
-		
-	});
+        var data = JSON.stringify({
+            "name": $("#name").val(),
+            "email": $("#email").val(),
+            "subject": $("#subject").val(),
+            "message": $("#message").val()
+            });
+
+        var config = {
+            method: 'post',
+            url: 'http://127.0.0.1:3000/api/v1/mail',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            data : data
+            };
+
+        axios(config)
+        .then(function (response) {
+                if (response == "success") {        
+                    $(".contact-form").find(".form-message").addClass("success");
+                    $(".form-message span").text("Message Sent!");
+                } else { 
+                    $(".contact-form").find(".form-message").addClass("error");
+                    $(".form-message span").text("Error Sending!");              
+                }
+            console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+            console.log(error);
+            });
+        });
+
     
     /*========== Scroll To Top  ==========*/
     function scrollUp() {
@@ -185,3 +178,7 @@ $(function () {
     });
     
 });
+
+
+
+
