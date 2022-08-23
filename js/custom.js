@@ -130,7 +130,7 @@ $(function () {
             });
 
         var config = {
-            method: 'post',
+            method: 'POST',
             url: 'https://mailservice-portfolio.herokuapp.com/api/v1/mail',
             headers: { 
                 'Content-Type': 'application/json'
