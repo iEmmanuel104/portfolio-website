@@ -121,40 +121,95 @@ $(function () {
     });
 	
 	/*========== Ajax Contact Form  ==========*/
-	$('.contact-form').on("submit", function () {
-        var data = JSON.stringify({
-            "name": $("#name").val(),
-            "email": $("#email").val(),
-            "subject": $("#subject").val(),
-            "message": $("#message").val()
-            });
+	// $('.contact-form').on("submit", function () {
+	// 	var myForm = $(this),
+	// 		data = {};
+	// 	myForm.attr('action', 'http://localhost:3000/api/v1/mail');
+    //     myForm.attr('method', 'POST');
+	// 	myForm.find('[name]').each(function() {
+			
+	// 		var that = $(this),
+	// 			name = that.attr('name'),
+	// 			value = that.val();
+			
+	// 		data[name] = value;
+			
+	// 	});
 
-        var config = {
-            method: 'POST',
-            url: 'https://mailservice-portfolio.herokuapp.com/api/v1/mail',
-            headers: { 
-                'Content-Type': 'application/json'
-            },
-            data : data
-            };
+    //     var myHeaders = new Headers();
+    //     myHeaders.append("Content-Type", "application/json");
 
-        axios(config)
-        .then(function (response) {
-                if (response == "success") {        
-                    $(".contact-form").find(".form-message").addClass("success");
-                    $(".form-message span").text("Message Sent!");
-                } else { 
-                    $(".contact-form").find(".form-message").addClass("error");
-                    $(".form-message span").text("Error Sending!");              
-                }
-            console.log(JSON.stringify(response.data));
+    //     var raw = JSON.stringify(data);
+
+    //     var requestOptions = {
+    //     method: myForm.attr('method'),
+    //     headers: myHeaders,
+    //     body: raw,
+    //     redirect: 'follow'
+    //     };
+
+    //     fetch(myForm.attr('action'), requestOptions)
+    //     .then((response) => {
+    //         // response.text()
+    //         if (response.ok) {
+    //             setTimeout(function () {
+    //                 $(".contact-form").find(".form-message").addClass("success")
+    //                 $(".form-message span").text("Message Sent!");
+    //                 $(".contact-form").find(".form-message").fadeIn(5000);
+    //             }, 8000); 
+    //             // myForm.reset();
+    //         }        
+    //     })
+    //     // .then(result => console.log(result))
+    //     .catch((error) => {
+    //         console.log('error', error)
+    //         setTimeout(
+    //             function()  
+    //             {
+    //                 $(".contact-form").find(".form-message").addClass("error")
+    //                 $(".form-message span").text("ERROR: Message Not Sent!");
+    //                 $(".contact-form").find(".form-message").fadeIn(5000);
+    //             }, 8000)
+    //     }); 
+    // }); 
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const data = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            subject: $("#subject").val(),
+            message: $("#message").val(),
+        };  
+        // Set the request headers
+        const headers = {
+            'Content-Type': 'application/json'
+        };  
+        let base_URL = "";
+        // Make the Axios request
+        axios.post(base_URL + "/signup", requestBody, { headers })
+            .then((response) => {
+                Toastifymessage('success', 'Welcome to Taximania, please check your Email for your verification');
+                console.log(response.data);
+
+                // set email value in user object in reponse.data to local storage
+                localStorage.setItem('email', response.data.user.email);
+                // redirect to verify page after 8 seconds
+                setTimeout(() => {
+                    window.location.href = "/verify";
+                }, 7000);
+                // clear the form
+                form.reset();
             })
-            .catch(function (error) {
-            console.log(error);
-            });
-        });
+            .catch((error) => {
+                // return error message
+                axiosErrorHandling(error);
+                console.error(error);
 
-    
+            });
+    })
+
+
     /*========== Scroll To Top  ==========*/
     function scrollUp() {
         if (win.scrollTop() >= 1200) {
@@ -178,7 +233,4 @@ $(function () {
     });
     
 });
-
-
-
 

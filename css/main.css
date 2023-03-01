@@ -164,12 +164,30 @@ h6 {
     text-align: center;
     outline: none;
 }
+.main-btnz {
+    position: relative;
+    display: inline-block;
+    min-width: 145px;
+    background: transparent;
+    color: #dca52e;
+    border: 2px solid #fa9b1b;
+    padding: 14px 0;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    outline: none;
+}
 
 .main-btn:hover {
     background: linear-gradient(to bottom, #fa9b1b 7%, #dca52e 93%);
     color: #fff;
 }
-
+.main-btnz:hover {
+    background: linear-gradient(to bottom, #fa9b1b 7%, #dca52e 93%);
+    color: #fff;
+}
 /* --------------------------------------
    2. Loading
 -----------------------------------------*/
@@ -616,8 +634,10 @@ h6 {
 }
 
 .about-me .about-info .btn-download {
-    background: linear-gradient(to bottom, #fa9b1b 7%, #dca52e 93%);
+    background: linear-gradient(to bottom, #fa9b1b 10%, #dca52e 80%);
     color: #fff;
+    padding: 0px;
+    margin-top: 4px;
 }
 
 /* --------------------------------------
@@ -1355,7 +1375,7 @@ h6 {
     margin-bottom: 20px;
     margin-top: 10px;
     font-weight: 600;
-    text-transform: uppercase;   
+    text-transform: uppercase;
 }
 
 .contact .contact-box .content-box {
@@ -1371,7 +1391,7 @@ h6 {
 }
 
 .contact .contact-form {
-	position: relative;
+    position: relative;
     background: #292929;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     padding: 40px 30px;
@@ -1411,16 +1431,16 @@ h6 {
     color: #c2c0c3;
 }
 
-.contact .contact-form .form-group .form-control:focus ~ label,
-.contact .contact-form .form-group input:not([value=""]) ~ label,
-.contact .contact-form .form-group textarea:not([data-value=""]) ~ label {
+.contact .contact-form .form-group .form-control:focus~label,
+.contact .contact-form .form-group input:not([value=""])~label,
+.contact .contact-form .form-group textarea:not([data-value=""])~label {
     top: -16px;
     left: 0;
     font-size: 13px;
     letter-spacing: .5px;
 }
 
-.contact .contact-form .form-group .form-control:focus ~ label {
+.contact .contact-form .form-group .form-control:focus~label {
     color: #dca52e;
 }
 
@@ -1439,7 +1459,7 @@ h6 {
     transform: scale(0);
 }
 
-.contact .contact-form .form-group .form-control:focus ~ .input-border {
+.contact .contact-form .form-group .form-control:focus~.input-border {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -o-transform: scale(1);
@@ -1447,7 +1467,7 @@ h6 {
     transform: scale(1);
 }
 
-.contact .contact-form .main-btn {
+.contact .contact-form .main-btnz {
     min-width: 170px;
 }
 
@@ -1464,11 +1484,11 @@ h6 {
 }
 
 .contact .contact-form .form-message.success {
-	background-color: #37983b;
+    background-color: #37983b;
 }
 
 .contact .contact-form .form-message.error {
-	background-color: #f54033;
+    background-color: #f54033;
 }
 
 /* --------------------------------------
@@ -1519,12 +1539,14 @@ h6 {
     text-align: center;
     font-size: 14px;
 }
+
 .footer .footer-social-icons li a img {
     width: 24px;
     height: 26px;
     padding-bottom: 1.5px;
 }
-.footer .footer-social-icons li> div{
+
+.footer .footer-social-icons li>div {
     background: transparent;
     color: #9a9b9c;
     display: inline-block;
@@ -1537,6 +1559,7 @@ h6 {
     text-align: center;
     font-size: 14px;
 }
+
 .footer .footer-social-icons li a:hover {
     background: #dca52e;
     border: 1px solid #dca52e;
@@ -1553,7 +1576,8 @@ h6 {
 .footer .copyright p a {
     background: linear-gradient(to bottom, #fa9b1b 7%, #dca52e 93%);
     -webkit-background-clip: text;
-    color: transparent;;
+    color: transparent;
+    ;
 }
 
 /* --------------------------------------
@@ -1593,12 +1617,12 @@ h6 {
 
 /* Large devices (desktops, less than 1200px) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    
+
     /*=========== Control Bar ============*/
     .control-bar {
         display: block;
     }
-    
+
     /*=========== Slide Menu ============*/
     .slide-menu {
         left: -100%;
@@ -1607,80 +1631,80 @@ h6 {
 
 /* Medium devices (tablets, less than 992px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    
+
     .main-title h2 {
         font-size: 26px;
     }
-    
+
     /*=========== Control Bar ============*/
     .control-bar {
         display: block;
     }
-    
+
     /*=========== Slide Menu ============*/
     .slide-menu {
         left: -100%;
     }
-    
+
     /*=========== About Me ============*/
     .about-me .about-image {
         margin-right: 180px;
         margin-left: 180px;
         margin-bottom: 40px;
     }
-    
+
     .about-me .about-info h3,
     .about-me .about-info h4,
     .about-me .about-info p {
         margin-bottom: 20px;
     }
-    
+
     /*=========== Services ============*/
     .services {
         padding-bottom: 70px;
     }
-    
+
     .services .service {
         margin-top: 25px;
         margin-bottom: 30px;
     }
-    
+
     .services .service.two .service-icon:after {
         content: none;
     }
-    
+
     .services .service h4 {
         margin-top: 0;
     }
-    
+
     /*=========== Resume ============*/
     .resume .education {
         margin-bottom: 30px;
     }
-    
+
     /*=========== Fun Facts ============*/
-    .facts  {
+    .facts {
         padding-bottom: 70px;
     }
-    
+
     .facts .fact-item {
         margin-bottom: 30px;
     }
-    
+
     .facts .fact-item.two .fact-icon:after {
         content: none;
     }
-    
+
     .facts .fact-item h4 {
         margin-top: 0;
     }
-    
+
     /*=========== Blog ============*/
     .blog .post {
         margin-left: 26px;
         margin-right: 26px;
     }
-    
+
     /*=========== Contact ============*/
     .contact .contact-box .title-box .name-box h4 {
         margin-top: 0;
@@ -1689,181 +1713,181 @@ h6 {
 
 /* Small Devices */
 @media (max-width: 767.98px) {
-    
+
     .main-title {
         margin-bottom: 40px;
     }
-    
+
     .main-title h2 {
         font-size: 26px;
     }
-    
+
     /*=========== Control Bar ============*/
     .control-bar {
         display: block;
     }
-    
+
     /*=========== Slide Menu ============*/
     .slide-menu {
         left: -100%;
     }
-    
+
     /*=========== Home ============*/
     .home .intro h4 {
         font-size: 30px;
     }
-    
+
     .home .intro h3 {
         font-size: 72px;
     }
-    
+
     /*=========== About Me ============*/
     .about-me {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
+
     .about-me .about-image {
         margin-right: 80px;
         margin-left: 80px;
         margin-bottom: 35px;
     }
-    
+
     .about-me .about-info h3 {
         font-size: 18px;
         margin-bottom: 20px;
     }
-    
+
     .about-me .about-info h4 {
         font-size: 24px;
         margin-bottom: 20px;
     }
-    
+
     .about-me .about-info p {
         font-size: 13px;
         margin-bottom: 20px;
     }
-    
+
     /*=========== Services ============*/
     .services {
         padding-top: 80px;
         padding-bottom: 50px;
     }
-    
+
     .services .service {
         margin-bottom: 30px;
         margin-top: 50px;
     }
-    
+
     .services .service.one {
         margin-top: 25px;
     }
-    
+
     .services .service .service-icon:after {
         content: none;
     }
-    
+
     .services .service h4 {
         margin-top: 0;
     }
-    
+
     /*=========== Resume ============*/
     .resume {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
+
     .resume .education {
         margin-bottom: 30px;
     }
-    
+
     .resume .resume-item p {
         font-size: 13px;
     }
-    
+
     /*=========== Skills ============*/
     .skills {
         padding-top: 80px;
         padding-bottom: 50px;
     }
-    
+
     /*=========== Portfolio ============*/
     .portfolio {
         padding-top: 80px;
         padding-bottom: 50px;
     }
-    
+
     .portfolio .portfolio-content .item {
         margin-left: 20px;
         margin-right: 20px;
     }
-    
+
     /*=========== Fun Facts ============*/
     .facts {
         padding-top: 80px;
         padding-bottom: 50px;
     }
-    
+
     .facts .fact-item {
         margin-bottom: 30px;
         margin-top: 50px;
     }
-    
+
     .facts .fact-item.one {
         margin-top: 25px;
     }
-    
+
     .facts .fact-item .fact-icon:after {
         content: none;
     }
-    
+
     .facts .fact-item h4 {
         margin-top: 0;
     }
-    
+
     /*=========== Testimonials ============*/
     .testimonials {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
+
     .testimonials .testimonial-box .description p {
         font-size: 13px;
     }
-    
+
     /*=========== Blog ============*/
     .blog {
         padding-top: 80px;
         padding-bottom: 50px;
     }
-    
+
     .blog .post {
         margin-bottom: 30px;
     }
-    
+
     .blog .post .post-content .post-text p {
         font-size: 13px;
     }
-    
+
     /*=========== Contact ============*/
     .contact {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
+
     .contact .contact-box {
         margin-bottom: 30px;
         margin-top: 50px;
     }
-    
+
     .contact .contact-box.one {
         margin-top: 25px;
     }
-    
+
     .contact .contact-box .title-box .icon-box:after {
         content: none;
     }
-    
+
     .contact .contact-box .title-box .name-box h4 {
         margin-top: 0;
     }
@@ -1871,106 +1895,106 @@ h6 {
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    
+
     .main-container {
         padding-right: 30px;
         padding-left: 30px;
     }
-    
-     /*=========== Control Bar ============*/
+
+    /*=========== Control Bar ============*/
     .control-bar {
         display: block;
     }
-    
+
     /*=========== Slide Menu ============*/
     .slide-menu {
         left: -100%;
     }
-    
+
     /*=========== Home ============*/
-    
+
     .home .intro h4 {
         font-size: 25px;
     }
-    
+
     .home .intro h3 {
         font-size: 54px;
         line-height: 75px;
     }
-    
+
     /*=========== About Me ============*/
     .about-me {
         padding-bottom: 65px;
     }
-    
+
     .about-me .about-image {
         margin: 0;
         margin-bottom: 30px;
     }
-    
+
     .about-me .about-info h4 {
         font-size: 20px;
     }
-    
+
     .about-me .about-info .main-btn {
         min-width: 150px;
         margin-right: 10px;
         margin-bottom: 15px;
         font-size: 13px;
     }
-    
+
     /*=========== Services ============*/
     .services .service h4 {
         font-size: 14px;
     }
-    
+
     .services .service p {
         font-size: 13px;
     }
-    
+
     /*=========== Resume ============*/
     .resume .resume-item .resume-date {
         font-size: 14px;
     }
-    
+
     .resume .resume-item h4 {
         font-size: 15px;
     }
-    
+
     .resume .resume-item p {
         font-size: 13px;
     }
-    
+
     /*=========== Skills ============*/
     .skills .skill-xs {
         width: 100%;
         float: none;
     }
-    
+
     /*=========== Portfolio ============*/
     .portfolio .list-filter li {
         font-size: 13px;
     }
-    
+
     .portfolio .portfolio-content .item {
         margin-left: 0;
         margin-right: 0;
     }
-	
+
     /*=========== Testimonials ============*/
-	.testimonials .testimonial-box {
-	    width: 100%;
+    .testimonials .testimonial-box {
+        width: 100%;
     }
-    
+
     /*=========== Blog ============*/
     .blog .post .post-content .post-title h4 {
         font-size: 15px;
     }
-    
+
     /*=========== Contact ============*/
     .contact .contact-form .main-btn {
         min-width: 150px;
         font-size: 13px;
     }
-    
+
 }
